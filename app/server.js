@@ -1,6 +1,8 @@
 var express = require('express') //llamamos a Express
-var app = express()       
-var bodyParser = require('body-parser')        
+var app = express()
+var bodyParser = require('body-parser')
+/*toda la configuración de bbdd la hacemos en un fichero a parte*/
+require('./db')
 
 var port = process.env.PORT || 8080  // establecemos nuestro puerto
 
