@@ -7,7 +7,12 @@ require('./db')
 var port = process.env.PORT || 8080  // establecemos nuestro puerto
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())            
+app.use(bodyParser.json())
+//Añado middelware
+app.use(function (req, res, next) {
+  console.log('Time:', Date.now())
+  next()
+})
 
 // nuestra ruta irá en http://localhost:8080/api
 // es bueno que haya un prefijo, sobre todo por el tema de versiones de la API
